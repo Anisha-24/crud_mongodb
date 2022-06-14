@@ -34,10 +34,10 @@ public class EmployeeController {
     @PutMapping(value = "/putEmployee/{id}")
     public ResponseEntity<Employee> putEmployee(@PathVariable(value = "id") int Id, @RequestBody Employee employee){
         Employee emp = repo.findById(Id);
-        employee.setCity(employee.getCity());
-        employee.setId(employee.getId());
-        employee.setName(employee.getName());
-        employee.setYear(employee.getYear());
+        emp.setCity(emp.getCity());
+        emp.setId(emp.getId());
+        emp.setName(emp.getName());
+        emp.setYear(emp.getYear());
         final Employee updatedEmployee = repo.save(employee);
         return ResponseEntity.ok(updatedEmployee);
     }
